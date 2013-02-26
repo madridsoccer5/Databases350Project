@@ -26,17 +26,15 @@
 <tr>All current post are being displayed!</tr>
 <?php
 	include('dbconnect.php');
-	$query = "SELECT username, date, title, post FROM posts ORDER BY date";
+	$query = "SELECT username, date, post FROM posts ORDER BY date";
     $result = mysqli_query($db, $query)
                          or die("Error Querying Database");
     while($row = mysqli_fetch_array($result)) {
   		$userName = $row['username'];
-  		$title = $row['title'];
   		$date = $row['date'];
   		$post = $row['post'];
   		echo "<tr><td>User</td><td>$userName</td></tr>\n";
 		echo "<tr><td>Date</td><td>$date</td></tr>\n";
-		echo "<tr><td>Title</td><td>$title</td></tr>\n";
 		echo "<tr><td>Post</td><td>$post</td></tr>\n";
 
   }                 
