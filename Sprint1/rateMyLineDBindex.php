@@ -22,8 +22,7 @@
 					
 					<p>Rate my line is a website dedicated to helping you find the right lines. Need a line for a first date? No problem! Dont know how to get a conversation started? We got that too! Feel free to post lines and like other people's lines. This is a free to use website so please be respectful of others and always be friendly!</p>
 					
-					<img src="2009_1116_redskins.jpg" />
-		
+					<img src="images/home.png" />
                      <p>&nbsp;</p>
 								
 					<!-- END CONTENT -->
