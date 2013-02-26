@@ -37,7 +37,7 @@
   		echo "<tr><td>User</td><td>$userName</td></tr>\n";
 		echo "<tr><td>Date</td><td>$date</td></tr>\n";
 		echo "<tr><td>Title</td><td>$title</td></tr>\n";
-		echo "<tr><td>Post</td><td>$blog</td></tr>\n";
+		echo "<tr><td>Post</td><td>$post</td></tr>\n";
 
   }                 
                          

@@ -23,7 +23,7 @@
 					<h3>Just Submit</h3>
 					
 					
-					<form method = "post" action = "submit2.php">
+					<form method = "post" action = "rateMyLineDBsubmit2.php">
 					<input type="submit" value="Press This Button!" />
 					</form>
 					
