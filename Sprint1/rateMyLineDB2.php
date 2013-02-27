@@ -46,9 +46,9 @@
     include('dbconnect.php');
     $date = $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
 					
-    $query = "INSERT INTO posts (username, date, post, title) VALUES ( '";
-    $query = $query . $userName . "', '" . $date . "', '" . $post . "', '" . $title . "')";
-					echo "<p>QUERY   $query</p>";
+    $query = "INSERT INTO posts (username, date, post) VALUES ( '";
+    $query = $query . $userName . "', '" . $date . "', '" . $post . "')";
+					
 	$result = mysqli_query($db, $query)
     or die("Error Querying Database");
     
