@@ -31,16 +31,20 @@
                          or die("Error Querying Database");
     while($row = mysqli_fetch_array($result)) {
   		$userName = $row['username'];
-  		$title = $row['title'];
   		$date = $row['date'];
   		$post = $row['post'];
+		$title = $row['title'];
+		
+		
   		echo "<tr><td>User</td><td>$userName</td></tr>\n";
 		echo "<tr><td>Date</td><td>$date</td></tr>\n";
 		echo "<tr><td>Title</td><td>$title</td></tr>\n";
 		echo "<tr><td>Post</td><td>$post</td></tr>\n";
-
+		echo '<tr><td><a class="like" href="#">Like</a> <a class="dislike" href="#">Dislike</a> </td><td>';
+		
   }                 
-                         
+   
+   
                          
                          
     mysqli_close($db);
