@@ -28,6 +28,7 @@
 	$query = "SELECT username, date, title, post FROM posts ORDER BY likes DESC";
     $result = mysqli_query($db, $query)
                          or die("Error Querying Database");
+    $list = 1;
     while($row = mysqli_fetch_array($result)) {
   		$userName = $row['username'];
   		$date = $row['date'];
@@ -35,12 +36,11 @@
 		$title = $row['title'];
 		
 		
-  		echo "<tr><td>User</td><td>$userName</td></tr>\n";
-		echo "<tr><td>Date</td><td>$date</td></tr>\n";
-		echo "<tr><td>Title</td><td>$title</td></tr>\n";
-		echo "<tr><td>Post</td><td>$post</td></tr>\n";
-		echo '<tr><td><a class="like" href="#">Like</a> <a class="dislike" href="#">Dislike</a> </td><td>';
-		
+  		echo '<br><br>';
+  		echo "$list $userName <br>";
+  		echo "\"$post\" <br>";
+  		echo '<a class="like" href="#">Like </a>   <a class="dislike" href="#"> Dislike</a> ';
+		$list = $list + 1;
   }                 
    
    

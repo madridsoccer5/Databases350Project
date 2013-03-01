@@ -36,13 +36,12 @@
   		$post = $row['post'];
 		$title = $row['title'];
 		
-		
-  		echo "<tr><td>User</td><td>$userName</td></tr>\n";
-		echo "<tr><td>Date</td><td>$date</td></tr>\n";
-		echo "<tr><td>Title</td><td>$title</td></tr>\n";
-		echo "<tr><td>Post</td><td>$post</td></tr>\n";
-		echo '<tr><td><a class="like" href="#">Like</a> <a class="dislike" href="#">Dislike</a> </td><td>';
-		
+		echo '<br><br>';
+  		echo "$userName <br>";
+  		echo "\"$post\" <br>";
+  		
+  		echo '<a class="like" href="#" onclick=>Like </a>   <a class="dislike" href="#"> Dislike</a> ';
+
   }                 
    
    
@@ -51,6 +50,7 @@
     mysqli_close($db);
 
 ?>
+		
 </table>
 
 
