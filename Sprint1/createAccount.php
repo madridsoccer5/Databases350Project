@@ -22,7 +22,8 @@ if (isset ($_POST))
 		
 		if ($row = mysqli_fetch_array($result))
 		{
-			if ($row['password'] == $password)
+			$error[] = 'That username is already taken';
+			/*if ($row['password'] == $password)
 			{
 				$_SESSION['loggedin'] = true;
 				header ('Location: rateMyLineDBindex.php');
@@ -31,11 +32,11 @@ if (isset ($_POST))
 			else
 			{
 				$error[] = 'wrong password';
-			}
+			}*/
 		}
 		else
-		{
-			$error[] = 'that user does not exist';
+		{			
+			//$insert = "INSERT INTO users(username, password) VALUES ('$_POST['username' ]', '$_POST['password']')";
 		}
 	}
 }
@@ -62,7 +63,7 @@ if (isset ($_POST))
 			<div class="page">
 				<div class="content">
 <?php if (isset ($error)) foreach ($error as $e) echo '<div class="error">' . $e . '</div>'; ?>
-        <h3>Login</h3>
+        <h3>Register</h3>
           <form method="post" action="rateMyLineDBlogin.php">
     <p>
     <label for="username">Username:</label>
@@ -71,7 +72,7 @@ if (isset ($_POST))
     <label for="password">Password:</label>
     <input type="password" id="password" name="password" size="40" /></p>
 
-    <p><input type="submit" value="login" name="login" /></p>
+    <p><input type="submit" value="register" name="register" /></p>
   </form>
   
   <p><a href="createAccount.php">Create Account</p>
@@ -83,3 +84,4 @@ if (isset ($_POST))
 </div>
 </body>
 </html>
+
