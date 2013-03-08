@@ -1,42 +1,28 @@
 <?php
 include "dbconnect.php";
-session_start();
-
-if (isset ($_SESSION['loggedin']))
-{
-	session_destroy();
-	die ('Logged out.<br /><a href="rateMyLineDBindex.php">Click here to go to the home page</a>');
-}
 
 if (isset ($_POST))
 {
-	if (@$_POST['login'] == 'login')
+
+	if (@$_POST['register'] == 'register')
 	{
+	
 		$name = $_POST['username'];
 		
 		// password in db is stored as sha1 hash
-		$password = sha1 ($_POST['password']);
+		$password =  ($_POST['password']);
 
-		$query = "SELECT * FROM users WHERE username = '$name'";
+		$query = "SELECT username FROM users WHERE username = '$name'";
 		$result = mysqli_query($db, $query) or die("Error Querying Database");
-		
-		if ($row = mysqli_fetch_array($result))
+		if (mysqli_num_rows($result) == 0)
 		{
-			$error[] = 'That username is already taken';
-			/*if ($row['password'] == $password)
-			{
-				$_SESSION['loggedin'] = true;
-				header ('Location: rateMyLineDBindex.php');
-				exit;
-			}
-			else
-			{
-				$error[] = 'wrong password';
-			}*/
+			$insert = "INSERT INTO users(username, password) VALUES ('$name', '$password')";
+			mysqli_query($db, $insert) or  die ("Error inserting into database");
+			
 		}
-		else
+		else 
 		{			
-			//$insert = "INSERT INTO users(username, password) VALUES ('$_POST['username' ]', '$_POST['password']')";
+			$error[] = 'That username is already taken';
 		}
 	}
 }
@@ -64,7 +50,7 @@ if (isset ($_POST))
 				<div class="content">
 <?php if (isset ($error)) foreach ($error as $e) echo '<div class="error">' . $e . '</div>'; ?>
         <h3>Register</h3>
-          <form method="post" action="rateMyLineDBlogin.php">
+          <form method="post" action="createAccount.php">
     <p>
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" size="40" </p>
@@ -75,7 +61,6 @@ if (isset ($_POST))
     <p><input type="submit" value="register" name="register" /></p>
   </form>
   
-  <p><a href="createAccount.php">Create Account</p>
 
 			</div>
 		</div>
