@@ -10,7 +10,7 @@ if (isset ($_POST))
 		$name = $_POST['username'];
 		
 		// password in db is stored as sha1 hash
-		$password =  ($_POST['password']);
+		$password =  sha1 ($_POST['password']);
 
 		$query = "SELECT username FROM users WHERE username = '$name'";
 		$result = mysqli_query($db, $query) or die("Error Querying Database");
