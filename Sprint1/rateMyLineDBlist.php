@@ -11,6 +11,7 @@
 <body>
 <?php
    include('header.php');
+   include 'like_dislike/core/init.php';
 ?>
 
 
@@ -25,31 +26,25 @@
 					
 <table>		
 <tr>All current post are being displayed!</tr>
+<p></p>
 <?php
 	include('dbconnect.php');
-	$query = "SELECT username, date, title, post FROM posts ORDER BY date";
-    $result = mysqli_query($db, $query)
-                         or die("Error Querying Database");
-    while($row = mysqli_fetch_array($result)) {
-  		$userName = $row['username'];
-  		$date = $row['date'];
-  		$post = $row['post'];
-		$title = $row['title'];
-		
-		echo '<br><br>';
-  		echo "$userName <br>";
-  		echo "\"$post\" <br>";
-  		
-  		echo '<a class="like" href="#" onclick=>Like </a>   <a class="dislike" href="#"> Dislike</a> ';
+	$posts = get_articles();
+	if (count($posts) == 0){
+		echo 'Sorry, no posts';
+	}else{
+		echo '<ul>';
+		foreach ($posts as $article){
+			echo '<li><p>', $article['post'], '</p><p><a class="like" href="#" onclick="like_add(',$article['id'], ');">Like</a> <span id = "post_',$article['id'],'_likes"">',$article['likes'],'</span> like this</p></li>';
+		}
+		echo '</ul>';
+	}
+	mysqli_close($db);
+	?>
+	<script type="text/javascript" src="like_dislike/js/jquery.js"></script>
+	<script type="text/javascript" src="like_dislike/js/like.js"></script>
 
-  }                 
-   
-   
-                         
-                         
-    mysqli_close($db);
 
-?>
 		
 </table>
 
