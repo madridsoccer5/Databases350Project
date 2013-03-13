@@ -39,7 +39,7 @@
   		echo '<br><br>';
   		echo "$list $userName <br>";
   		echo "\"$post\" <br>";
-  		echo '<a class="like" href="#">Like </a>   <a class="dislike" href="#"> Dislike</a> ';
+  		echo '<a class="like" href="#">Like </a>   <a class="like" href="#"> Dislike</a> ';
 		$list = $list + 1;
   }                 
    
