@@ -1,6 +1,15 @@
+
 * {
 	margin:0;
 	padding:0;
+}
+.like{
+	
+	color:#fff;
+	text-decoration:none;
+	padding:1px 5px 1px 5px;
+	border-radius:5px;
+	border:1px solid #100;
 }
 body {
 	background:#333333 none repeat-x scroll top left;
@@ -252,3 +261,4 @@ form.searchform {
 .clear {
 	clear:both;
 }
+

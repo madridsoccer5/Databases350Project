@@ -1,4 +1,4 @@
-<?php session_start(); ?>
+
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -11,7 +11,7 @@
 <body>
 <?php
    include('header.php');
-   include 'like_dislike/core/init.php';
+   include 'core/init.php';
 ?>
 
 
@@ -41,8 +41,8 @@
 	}
 	mysqli_close($db);
 	?>
-	<script type="text/javascript" src="like_dislike/js/jquery.js"></script>
-	<script type="text/javascript" src="like_dislike/js/like.js"></script>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/like.js"></script>
 
 
 		
