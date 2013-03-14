@@ -25,15 +25,15 @@
 					<table>		
 <?php
 	include('dbconnect.php');
-	$query = "SELECT username, date, title, post FROM posts ORDER BY likes DESC";
+	$query = "SELECT username, post FROM posts ORDER BY likes DESC";
     $result = mysqli_query($db, $query)
                          or die("Error Querying Database");
     $list = 1;
     while($row = mysqli_fetch_array($result)) {
   		$userName = $row['username'];
-  		$date = $row['date'];
+  		
   		$post = $row['post'];
-		$title = $row['title'];
+		
 		
 		
   		echo '<br><br>';
