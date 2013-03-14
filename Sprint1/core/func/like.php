@@ -16,7 +16,8 @@ function like_count($id){
 
 function add_like($id){
 	$id = (int)$id;
+	$user_id = $_POST['user_id'];
 	mysql_query("UPDATE posts SET likes = likes + 1 WHERE id = $id");
-	mysql_query("INSERT INTO likes (user_id, post_id) VALUES (".$_SESSION['user_id'].", '$id')");
+	mysql_query("INSERT INTO likes (user_id, post_id) VALUES ('$user_id', '$id')");
 }
 ?>
