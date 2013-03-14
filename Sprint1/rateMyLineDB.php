@@ -27,7 +27,6 @@
 					<form method = "post" action = "rateMyLineDB2.php">
 					<table>
 					<tr><td>Username</td><td><input type="text" id="userName" name="userName" /></td></tr>
-					<tr><td>Title</td><td><input type="text" id="title" name="title" /></td></tr>
  					<textarea name="textArea" cols="70" rows="5" id="post" name="post"></textarea>
 					<tr><td>&nbsp;</td><td><input type="submit" value="Submit Post" /></td></tr>
 					</table>

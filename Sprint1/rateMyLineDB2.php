@@ -26,15 +26,11 @@
 					<p>Thanks for posting! </p>
 					<table>
 					<?php
-					$month = $_POST['month'];
-					$day = $_POST['day'];
-					$year = $_POST['year'];
-					$title = $_POST['title'];
+					
 					$post = $_POST['textArea'];
 					$userName = $_POST['userName'];
 					echo "<tr><td>Name</td><td>$userName</td></tr>\n";
-					echo "<tr><td>Date</td><td>$month-$day-$year</td></tr>\n";
-					echo "<tr><td>Title:</td><td>$title</td></tr>\n";
+					
 					echo "<tr><td>Post</td><td>$post</td></tr>\n";
 					
 					?>
@@ -47,8 +43,8 @@
     include('dbconnect.php');
     $date = $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
 					
-    $query = "INSERT INTO posts (username, date, title, post) VALUES ( '";
-    $query = $query . $userName . "', '" . $date . "', '" . $title . "', '" . $post . "')";
+    $query = "INSERT INTO posts (username, post) VALUES ( '";
+    $query = $query . $userName . "','" . $post . "')";
 					
 	$result = mysqli_query($db, $query)
     or die("Error Querying Database");
