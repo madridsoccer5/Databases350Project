@@ -25,7 +25,7 @@
 					<h3>Great Pickup Lines!</h3>
 					
 <table>		
-<tr>All current post are being displayed!</tr>
+
 <p></p>
 <?php
 	include('dbconnect.php');
