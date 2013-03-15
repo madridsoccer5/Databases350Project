@@ -11,6 +11,9 @@
 	border-radius:5px;
 	border:1px solid #100;
 }
+
+
+
 body {
 	background:#333333 none repeat-x scroll top left;
 	margin:0 auto;
@@ -18,7 +21,14 @@ body {
 	font-family:Arial, Helvetica, sans-serif;
 }
 
-
+.dislike{
+	
+	color:#fff;
+	text-decoration:none;
+	padding:1px 5px 1px 5px;
+	border-radius:5px;
+	border:1px solid #100;
+}
 /* wrapper */
 div#wrap {
 	width:90%;

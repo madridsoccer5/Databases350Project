@@ -35,7 +35,7 @@
 	}else{
 		echo '<ul>';
 		foreach ($posts as $article){
-			echo '<li><p>', $article['post'], '</p><p><a class="like" href="#" onclick="like_add(',$article['id'], ');">Like</a> <span id = "post_',$article['id'],'_likes"">',$article['likes'],'</span> like this</p></li>';
+			echo '<li><p>', $article['post'], '</p><p><a class="like" href="#" onclick="like_add(',$article['id'], ');">Like</a> <span id = "post_',$article['id'],'_likes"">',$article['likes'],'</span> like this <a class="dislike" href="#" onclick="dislike_add(',$article['id'], ');">Dislike</a> <span id = "post_',$article['id'],'_dislikes"">',$article['dislikes'],'</span> dislike this</p></li>';
 		}
 		echo '</ul>';
 	}

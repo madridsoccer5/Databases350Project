@@ -10,6 +10,7 @@
 
 <?php
   include("header.php");
+  include 'core/init.php';
 ?>
 <div id="wrap">
 	<div class="pagewrapper">
@@ -25,21 +26,23 @@
 					<table>		
 <?php
 	include('dbconnect.php');
-	$query = "SELECT username, post FROM posts ORDER BY likes DESC";
+	$query = "SELECT username,likes,dislikes,id, post FROM posts ORDER BY dislikes DESC";
     $result = mysqli_query($db, $query)
                          or die("Error Querying Database");
     $list = 1;
     while($row = mysqli_fetch_array($result)) {
   		$userName = $row['username'];
-  		
+  		$likes = $row['likes'];
   		$post = $row['post'];
-		
-		
+		$post_id = $row['id'];
+		$dislikes = $row['dislikes'];
 		
   		echo '<br><br>';
   		echo "$list $userName <br>";
+  		
   		echo "\"$post\" <br>";
-  		echo '<a class="like" href="#">Like </a>   <a class="like" href="#"> Dislike</a> ';
+  		echo '<a class="like" href="#" onclick="like_add(',$post_id, ');">Like</a> <span id = "post_',$post_id,'_likes"">',$likes,'</span> like this</li><a class="dislike" href="#" onclick="dislike_add(',$post_id, ');">Dislike</a> <span id = "post_',$post_id,'_dislikes"">',$dislikes,'</span> dislike this</p></li>';
+  	 
 		$list = $list + 1;
   }                 
    
@@ -49,8 +52,10 @@
     mysqli_close($db);
 
 ?>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="js/like.js"></script>
 </table>
-					
+			
 								
 					<!-- END CONTENT -->
 					

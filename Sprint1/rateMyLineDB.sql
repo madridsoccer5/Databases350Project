@@ -24,3 +24,10 @@ CREATE TABLE IF NOT EXISTS `likes` (
 `post_id` int(11) NOT NULL,
 PRIMARY KEY (`like_id`)
 );
+
+CREATE TABLE IF NOT EXISTS `dislikes` (
+`dislike_id` int(11) NOT NULL AUTO_INCREMENT,
+`user_id` int(11) NOT NULL,
+`post_id` int(11) NOT NULL,
+PRIMARY KEY (`dislike_id`)
+);

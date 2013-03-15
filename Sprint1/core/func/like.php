@@ -20,4 +20,11 @@ function add_like($id){
 	mysql_query("UPDATE posts SET likes = likes + 1 WHERE id = $id");
 	mysql_query("INSERT INTO likes (user_id, post_id) VALUES ('$user_id', '$id')");
 }
+
+function add_dislike($id){
+	$id = (int)$id;
+	$user_id = $_POST['user_id'];
+	mysql_query("UPDATE posts SET dislikes = dislikes + 1 WHERE id = $id");
+	mysql_query("INSERT INTO dislikes (user_id, post_id) VALUES ('$user_id', '$id')");
+}
 ?>
