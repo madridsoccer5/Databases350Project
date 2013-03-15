@@ -11,6 +11,7 @@
 <body>
 <?php
    include('header.php');
+
 ?>
 
 
@@ -19,14 +20,12 @@
 		<div class="innerpagewrapper">
 			<div class="page">
 				<div class="content">
-				
 					<!-- CONTENT -->
 					<h3>Submit a Line</h3>
 					<p>Welcome to our line post section. Feel free to post any pickup line!</p>
-					
 					<form method = "post" action = "rateMyLineDB2.php">
 					<table>
-					<tr><td>Username</td><td><input type="text" id="userName" name="userName" /></td></tr>
+					<tr><td>Username</td><td><input type="text" id="userName" name="userName" value="<?php echo $_COOKIE['userloggedin'];?>"/></td></tr>
  					<textarea name="textArea" cols="70" rows="5" id="post" name="post"></textarea>
 					<tr><td>&nbsp;</td><td><input type="submit" value="Submit Post" /></td></tr>
 					</table>

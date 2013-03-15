@@ -17,6 +17,7 @@ if (isset ($_POST))
 		if (mysqli_num_rows($result) == 0)
 		{
 			$insert = "INSERT INTO users(username, password) VALUES ('$name', '$password')";
+			$Continue[] = 'Thank you for registering with us!';
 			mysqli_query($db, $insert) or  die ("Error inserting into database");
 			
 		}
@@ -49,6 +50,7 @@ if (isset ($_POST))
 			<div class="page">
 				<div class="content">
 <?php if (isset ($error)) foreach ($error as $e) echo '<div class="error">' . $e . '</div>'; ?>
+<?php if (isset ($Continue)) foreach ($Continue as $C) echo '<div class = "Continue">' . $C . '</div>'; ?>
         <h3>Register</h3>
           <form method="post" action="createAccount.php">
     <p>

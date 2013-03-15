@@ -4,7 +4,8 @@ session_start();
 
 if (isset ($_SESSION['loggedin']))
 {
-	session_destroy();
+	setcookie("userloggedin"," ", time() - 3600);
+	session_destroy();	
 	die ('Logged out.<br /><a href="rateMyLineDBindex.php">Click here to go to the home page</a>');
 }
 
@@ -25,6 +26,8 @@ if (isset ($_POST))
 			if ($row['password'] == $password)
 			{
 				$_SESSION['loggedin'] = true;
+				$year = time() + 31536000;
+				setcookie(userloggedin,$_POST['username'], $year);
 				header ('Location: rateMyLineDBindex.php');
 				exit;
 			}

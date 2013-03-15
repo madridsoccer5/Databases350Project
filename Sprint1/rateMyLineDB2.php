@@ -29,6 +29,7 @@
 					
 					$post = $_POST['textArea'];
 					$userName = $_POST['userName'];
+
 					echo "<tr><td>Name</td><td>$userName</td></tr>\n";
 					
 					echo "<tr><td>Post</td><td>$post</td></tr>\n";
@@ -41,7 +42,7 @@
 					<!-- END CONTENT -->
 <?php
     include('dbconnect.php');
-    $date = $_POST['year'].'-'.$_POST['month'].'-'.$_POST['day'];
+
 					
     $query = "INSERT INTO posts (username, post) VALUES ( '";
     $query = $query . $userName . "','" . $post . "')";
