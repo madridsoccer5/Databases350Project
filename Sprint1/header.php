@@ -9,9 +9,9 @@
 					<li><a href="rateMyLineDBindex.php">Home</a></li>
 					<li><a href="rateMyLineDBlogin.php"><?php echo (@$_SESSION['loggedin']) ? 'Logout' : 'Login' ?></a></li>
 					<li><a href="rateMyLineDB.php">Add A Pickup Line</a></li>
-					<li><a href="rateMyLineDBlist.php">View Pick Up Lines</a></li>
-					<li><a href="rateMyLineDDtopcomments.php">Top Lines</a></li>
-					<li><a href="rateMyLineDBworstcomments.php">Worst Lines</a></li>
+					<li><a href="rateMyLineDBlist.php">View All Pick Up Lines</a></li>
+					<li><a href="rateMyLineDDtopcomments.php">Top Lines by Users</a></li>
+					<li><a href="rateMyLineDBworstcomments.php">Worst Lines by Users</a></li>
 					<li><a href="createAccount.php">Register</a></li>
 					
 

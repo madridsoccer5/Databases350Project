@@ -26,7 +26,7 @@
 					<table>		
 <?php
 	include('dbconnect.php');
-	$query = "SELECT username,likes,dislikes,id, post FROM posts ORDER BY dislikes DESC";
+$query = "SELECT posts.username,posts.likes,posts.dislikes,posts.id, posts.post FROM posts, users WHERE users.username = posts.username ORDER BY dislikes DESC";
     $result = mysqli_query($db, $query)
                          or die("Error Querying Database");
     $list = 1;
