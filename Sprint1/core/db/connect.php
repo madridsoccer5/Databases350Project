@@ -1,4 +1,5 @@
 <?php
-mysql_connect('localhost', 'root', '') or die(mysql_error());
+$db = mysqli_connect('localhost','rmluser','assist','rmlDB') 
+	or die ("ERROR: connecting to mysql server! in dbconnect.php");
 mysql_select_db('rmlDB');
 ?>
