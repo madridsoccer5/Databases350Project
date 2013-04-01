@@ -31,3 +31,5 @@ CREATE TABLE IF NOT EXISTS `dislikes` (
 `post_id` int(11) NOT NULL,
 PRIMARY KEY (`dislike_id`)
 );
+
+CREATE INDEX `login` ON `users` (`username`, `password`);

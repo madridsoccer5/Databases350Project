@@ -18,7 +18,7 @@ if (isset ($_POST))
 		// password in db is stored as sha1 hash
 		$password = sha1 ($_POST['password']);
 
-		$query = "SELECT * FROM users WHERE username = '$name'";
+		$query = "SELECT * FROM login WHERE username = '$name'";
 		$result = mysqli_query($db, $query) or die("Error Querying Database");
 		
 		if ($row = mysqli_fetch_array($result))
