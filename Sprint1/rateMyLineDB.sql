@@ -32,4 +32,4 @@ CREATE TABLE IF NOT EXISTS `dislikes` (
 PRIMARY KEY (`dislike_id`)
 );
 
-CREATE INDEX `login` ON `users` (`username`, `password`);
+CREATE INDEX `postindex` ON `posts` (`username`, `post`);
